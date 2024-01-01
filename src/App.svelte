@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { Link, Route, Router } from "svelte-routing";
   import About from "./pages/About.svelte";
   import Checkout from "./pages/Checkout.svelte";
   import Home from "./pages/Home.svelte";
@@ -7,6 +8,17 @@
   import Products from "./pages/Products.svelte";
 </script>
 
-<main>
-  <h1>Hello</h1>
-</main>
+<Router>
+  <nav>
+    <Link to="/">Home</Link>
+    <Link to="/about">About</Link>
+    <Link to="/products">Products</Link>
+    <Link to="/product/6">Product 6</Link>
+  </nav>
+  <div>
+    <Route path="/"><Home /></Route>
+    <Route path="/about"><About /></Route>
+    <Route path="/products"><Products /></Route>
+    <Route path="/product/:id" component={Product} />.
+  </div>
+</Router>
