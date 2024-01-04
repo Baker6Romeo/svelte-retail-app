@@ -9,11 +9,10 @@
 </script>
 
 <Router>
-  <nav>
+  <nav class="navbar">
     <Link to="/">Home</Link>
     <Link to="/about">About</Link>
     <Link to="/products">Products</Link>
-    <Link to="/product/6">Product 6</Link>
   </nav>
   <div>
     <Route path="/"><Home /></Route>
