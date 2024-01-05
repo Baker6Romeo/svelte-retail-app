@@ -1,7 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import products from "../../stores/defaultProducts";
-  import localProducts from "../../localProducts";
 
   let defaultProducts: any[] = [];
 
