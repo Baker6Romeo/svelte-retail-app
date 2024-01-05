@@ -1,11 +1,16 @@
 <script lang="ts">
-  import { onMount } from "svelte";
+  import { onDestroy, onMount } from "svelte";
   import products from "../../stores/defaultProducts";
+  import type { Unsubscriber } from "svelte/store";
 
   let defaultProducts: any[] = [];
+  let unsubscribe: Unsubscriber;
 
+  onDestroy(() => {
+    unsubscribe();
+  });
   onMount(() => {
-    products.subscribe((products) => {
+    unsubscribe = products.subscribe((products) => {
       defaultProducts = products;
     });
   });
