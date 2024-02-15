@@ -7,7 +7,9 @@
 
 <section>
   <h2 class="section-title">{title}</h2>
-  {#each $products as product}
-    <Product {product} />
-  {/each}
+  <div class="products-center">
+    {#each $products as product}
+      <Product {product} />
+    {/each}
+  </div>
 </section>
