@@ -1,8 +1,13 @@
 <script lang="ts">
+  import Product from "./Product.svelte";
   import products from "../../stores/defaultProducts";
+
+  export let title = "";
 </script>
 
-<h1>Products Component</h1>
-{#each $products as product}
-  <h2>{product.title}</h2>
-{/each}
+<section>
+  <h2 class="section-title">{title}</h2>
+  {#each $products as product}
+    <Product {product<any>}/>
+  {/each}
+</section>
