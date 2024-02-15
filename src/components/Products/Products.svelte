@@ -1,4 +1,5 @@
 <script>
+  import Loading from "../Loading.svelte";
   import Product from "./Product.svelte";
   import products from "../../stores/defaultProducts";
 
@@ -10,6 +11,8 @@
   <div class="products-center">
     {#each $products as product}
       <Product {product} />
+    {:else}
+      <Loading />
     {/each}
   </div>
 </section>
