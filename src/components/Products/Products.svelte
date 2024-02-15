@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
   import Product from "./Product.svelte";
   import products from "../../stores/defaultProducts";
 
@@ -8,6 +8,6 @@
 <section>
   <h2 class="section-title">{title}</h2>
   {#each $products as product}
-    <Product {product<any>}/>
+    <Product {product} />
   {/each}
 </section>
