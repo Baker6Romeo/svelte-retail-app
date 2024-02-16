@@ -1,20 +1,18 @@
 <script>
   import Loading from "../Loading.svelte";
   import Product from "./Product.svelte";
-  import products from "../../stores/defaultProducts";
+  import { featuredStore } from "../../stores/defaultProducts";
 
   export let title = "";
-
-  $: featuredProducts = $products.filter((item) => item.featured === true);
 </script>
 
-{#if featuredProducts.length === 0}
+{#if $featuredStore.length === 0}
   <Loading />
 {:else}
   <section class="section">
     <h2 class="section-title">{title}</h2>
     <div class="products-center">
-      {#each featuredProducts as product (product.id)}
+      {#each $featuredStore as product (product.id)}
         <Product {product} />
       {/each}
     </div>
