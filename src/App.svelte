@@ -4,16 +4,13 @@
   import Checkout from "./pages/Checkout.svelte";
   import Home from "./pages/Home.svelte";
   import Login from "./pages/Login.svelte";
+  import Navbar from "./components/Navbar/Navbar.svelte";
   import Product from "./pages/Product.svelte";
   import Products from "./pages/Products.svelte";
 </script>
 
 <Router>
-  <nav class="navbar">
-    <Link to="/">Home</Link>
-    <Link to="/about">About</Link>
-    <Link to="/products">Products</Link>
-  </nav>
+  <Navbar />
   <div>
     <Route path="/"><Home /></Route>
     <Route path="/about"><About /></Route>
